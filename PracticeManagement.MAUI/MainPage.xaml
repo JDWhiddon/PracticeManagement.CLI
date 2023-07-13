@@ -1,0 +1,28 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeManagement.MAUI.MainPage">
+
+    <ScrollView>
+        <Grid>
+            <Grid Grid.Row="1" VerticalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="12*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="12*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Text="Client View" Clicked="ClientsClicked" HorizontalOptions="CenterAndExpand"></Button>
+                <Button Grid.Column="0" Grid.Row="1" Text="Project View" Clicked="ProjectsClicked" HorizontalOptions="CenterAndExpand"></Button>
+                <Button Grid.Column="0" Grid.Row="2" Text="Employee View" Clicked="ClientsClicked" HorizontalOptions="CenterAndExpand"></Button>
+            </Grid>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

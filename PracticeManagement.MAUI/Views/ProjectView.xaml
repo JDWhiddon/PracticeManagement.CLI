@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeManagement.MAUI.Views.ProjectView"
+             Title="ProjectView"
+             NavigatedTo="OnArrived">
+    <VerticalStackLayout>
+        <Label
+           Text="{Binding Path=Client.Name}"
+           VerticalOptions="Center"
+           HorizontalOptions="Start"/>
+        <ListView
+            ItemsSource="{Binding Projects}"
+            >
+        </ListView>
+        <Button Text="Add" Grid.Column="0" Clicked="AddClicked"></Button>
+        <!--<Button Text="Delete" Grid.Column="1" Clicked="DeleteClicked"></Button>
+        <Button Text="Projects" Grid.Column="2" Clicked="EditClicked"></Button>-->
+    </VerticalStackLayout>
+</ContentPage>
