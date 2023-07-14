@@ -52,7 +52,8 @@ namespace PracticeManagement.MAUI.ViewModels
 
         public void Delete()
         {
-            if (SelectedClient == null)
+
+            if (SelectedClient == null || ProjectService.Current.ListOfProjects.Any(p => p.ClientId == SelectedClient.Id && p.IsActive)) 
             {
                 return;
             }
@@ -62,7 +63,7 @@ namespace PracticeManagement.MAUI.ViewModels
 
         public void DeleteProject()
         {
-            if (SelectedProject == null)
+            if (SelectedProject == null || SelectedProject.Model.IsActive == true)
             {
                 return;
             }

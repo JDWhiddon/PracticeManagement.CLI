@@ -16,6 +16,7 @@
             <Entry Grid.Column="1" Text="{Binding Path=Model.LongName}"/>
             
         </Grid>
+        <Button Text="Toggle Status" Command="{Binding ToggleProjectStatusCommand}"/>
         <Button Text="OK" Command="{Binding AddOrUpdateCommand}"/>
         <Button Text="Cancel" Clicked="CancelClicked"/>
     </VerticalStackLayout>

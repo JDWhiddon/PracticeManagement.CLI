@@ -20,10 +20,10 @@ namespace PracticeManagement.MAUI.ViewModels
 
         public ICommand AddOrUpdateCommand { get; private set; }
         public ICommand TimerCommand { get; private set; }
-
         public ICommand EditCommand { get; private set; }
+        public ICommand ToggleProjectStatusCommand { get; private set; }
 
-        public string Display {
+    public string Display {
             get
             {
                 return Model.ToString();
@@ -52,10 +52,17 @@ namespace PracticeManagement.MAUI.ViewModels
             Application.Current.OpenWindow(window);
         }
 
+        private void ExecuteToggleProjectStatus()
+        {
+            ProjectService.Current.ExecuteToggleProjectStatus(Model);
+            Shell.Current.GoToAsync($"//ClientDetails?clientId={Model.ClientId}");
+        }
+
         public void SetUpCommands()
         {
             AddOrUpdateCommand = new Command(ExecuteAdd);
             TimerCommand = new Command(ExecuteTimer);
+            ToggleProjectStatusCommand = new Command(ExecuteToggleProjectStatus);
         }
         
         public ProjectViewModel(int clientId)
@@ -69,12 +76,14 @@ namespace PracticeManagement.MAUI.ViewModels
             Project project = ProjectService.Current.Get(projectId);
             Model = project;
             AddOrUpdateCommand = new Command(ExecuteEdit);
+            SetUpCommands();
         }
 
         public ProjectViewModel(Project model)
         {
             Model = model;
             AddOrUpdateCommand = new Command(ExecuteEdit);
+            SetUpCommands();
         }
 
         public ProjectViewModel()

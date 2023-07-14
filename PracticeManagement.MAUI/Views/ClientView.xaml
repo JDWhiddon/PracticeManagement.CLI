@@ -33,11 +33,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-            <Button Text="Edit" Grid.Column="0" Clicked="EditClicked"></Button>
-            <Button Text="Delete" Grid.Column="1" Clicked="DeleteClicked"></Button>
-            <Button Text="Projects" Grid.Column="2" Clicked="ProjectsClicked"></Button>
+            <Button Text="Edit Client" Grid.Column="0" Clicked="EditClicked"></Button>
+            <Button Text="Close Client" Grid.Column="1" Clicked="DeleteClicked"></Button>
             </Grid>
 
         <Grid Grid.Row="3">

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace PracticeManagement.Library.Services
 {
@@ -30,7 +31,7 @@ namespace PracticeManagement.Library.Services
         private ProjectService()
         {
             listOfProjects = new List<Project> {
-                new Project {Id = 1, LongName = "PWD", ClientId = 1}                
+                new Project {Id = 1, LongName = "PWD", ClientId = 1, IsActive = true }                
             };
         }
         List<Project> listOfProjects;
@@ -39,7 +40,20 @@ namespace PracticeManagement.Library.Services
             if(project.Id == 0)
             {
                 project.Id = LastId + 1;
+                project.IsActive = true;
                 listOfProjects.Add(project);
+            }
+        }
+
+        public void ExecuteToggleProjectStatus(Project project)
+        {
+            if (project.IsActive == true)
+            {
+                project.IsActive = false;
+            } 
+            else
+            {
+                project.IsActive = true;
             }
         }
 
@@ -70,6 +84,8 @@ namespace PracticeManagement.Library.Services
                 listOfProjects.Remove(projectToRemove);
             }
         }
+
+
         public void Read() => listOfProjects.ForEach(Console.WriteLine);
     }
 }

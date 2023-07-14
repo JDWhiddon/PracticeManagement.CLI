@@ -6,8 +6,6 @@ namespace PracticeManagement.MAUI.Views;
 
 [QueryProperty(nameof(ClientId), "clientId")]
 
-
-
 public partial class ClientDetailsView : ContentPage
 {
     public int ClientId { get; set; }
