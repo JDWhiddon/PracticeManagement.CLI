@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeManagement.MAUI.Views.EmployeeView"
+             Title="EmployeeView">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" Text="{Binding Path=Query}"></Entry>
+                <Button Grid.Column="1" Text="Search" Clicked="SearchClicked"></Button>
+                <Button Grid.Column="2" Text="Add" Clicked="AddClicked"></Button>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <ListView ItemsSource="{Binding Path=Employees, Mode=TwoWay}"
+                      SelectedItem="{Binding Path=SelectedEmployee, Mode=TwoWay}">
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Edit Client" Grid.Column="0" Clicked="EditClicked"></Button>
+                <Button Text="Close Client" Grid.Column="1" Clicked="DeleteClicked"></Button>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Button Text="Go Back" Clicked="GoBackClicked"></Button>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

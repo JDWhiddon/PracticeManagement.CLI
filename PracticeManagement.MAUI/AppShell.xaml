@@ -8,6 +8,8 @@
     xmlns:local3="clr-namespace:PracticeManagement.MAUI.Views"
     xmlns:local4="clr-namespace:PracticeManagement.MAUI.Views"
     xmlns:local5="clr-namespace:PracticeManagement.MAUI.Views"
+    xmlns:local6="clr-namespace:PracticeManagement.MAUI.Views"
+    xmlns:local7="clr-namespace:PracticeManagement.MAUI.Views"
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
@@ -30,5 +32,13 @@
         Title="=Client Details"
         ContentTemplate="{DataTemplate local5:ClientDetailsView}"
         Route="ClientDetails" />
+    <ShellContent
+        Title="=Time Entry"
+        ContentTemplate="{DataTemplate local6:TimeEntryView}"
+        Route="TimeEntry" />
+    <ShellContent
+        Title="=Employee Management"
+        ContentTemplate="{DataTemplate local7:EmployeeView}"
+        Route="Employees" />
     
 </Shell>

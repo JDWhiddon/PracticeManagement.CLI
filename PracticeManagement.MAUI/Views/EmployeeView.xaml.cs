@@ -1,26 +1,23 @@
-using PracticeManagement.CLI.Models;
 using PracticeManagement.MAUI.ViewModels;
 
 namespace PracticeManagement.MAUI.Views;
 
-
-public partial class ClientView : ContentPage
+public partial class EmployeeView : ContentPage
 {
-
-    public ClientView()
-	{
-		InitializeComponent();
-        BindingContext = new ClientViewModel();
+    public EmployeeView()
+    {
+        InitializeComponent();
+        BindingContext = new EmployeeViewModel();
     }
 
     private void DeleteClicked(object sender, EventArgs e)
     {
-        (BindingContext as ClientViewModel).Delete();
+        (BindingContext as EmployeeViewModel).Delete();
     }
 
     private void SearchClicked(object sender, EventArgs e)
     {
-        (BindingContext as ClientViewModel).Search();
+        (BindingContext as EmployeeViewModel).Search();
     }
 
     private void GoBackClicked(object sender, EventArgs e)
@@ -34,11 +31,11 @@ public partial class ClientView : ContentPage
     }
     private void EditClicked(object sender, EventArgs e)
     {
-        (BindingContext as ClientViewModel).Edit();
+        //(BindingContext as EmployeeViewModel).Edit();
     }
 
     private void OnArrived(object sender, NavigatedToEventArgs e)
     {
-        (BindingContext as ClientViewModel).RefreshClientList();
+        //(BindingContext as ClientViewModel).RefreshEmployeeList();
     }
 }

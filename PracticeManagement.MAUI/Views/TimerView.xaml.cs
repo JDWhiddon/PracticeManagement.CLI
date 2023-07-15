@@ -12,4 +12,9 @@ public partial class TimerView : ContentPage
 		InitializeComponent();
 		BindingContext = new TimerViewModel(projectId);
 	}
+
+    private void EnterTimeClicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync($"//TimeEntryView");
+    }
 }
